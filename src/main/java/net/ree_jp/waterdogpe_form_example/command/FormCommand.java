@@ -46,14 +46,14 @@ public class FormCommand extends Command {
         Dropdown dropdown = new Dropdown("This is a dropdown example.", new ArrayList<>(Arrays.asList("A", "B", "C")));
         Toggle toggle = new Toggle("This is a toggle example.", false);
         Slider slider = new Slider("This is a slider example.", 0, 100, 50);
-        StepSlider stepSlider = new StepSlider("This is a step slider example.", new ArrayList<>(Arrays.asList(0, 50, 100)), 50);
+        StepSlider stepSlider = new StepSlider("This is a step slider example.", new ArrayList<>(Arrays.asList("0", "50", "100")), 1);
 
         CustomForm form = new CustomForm("CustomForm", () -> {
             player.sendMessage("input: " + input.getResult());
             player.sendMessage("dropdown: " + dropdown.getResult() + "(value: " + dropdown.getResultValue() + ")");
             player.sendMessage("toggle: " + toggle.getResult());
             player.sendMessage("slider: " + slider.getResult());
-            player.sendMessage("stepSlider: " + stepSlider.getResult());
+            player.sendMessage("stepSlider: " + stepSlider.getResult() + "(value: " + stepSlider.getResultValue() + ")");
         }, () -> player.sendMessage("click close"));
 
         form.addElement(label, input, dropdown, toggle, slider, stepSlider);
