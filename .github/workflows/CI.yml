@@ -18,6 +18,8 @@ jobs:
 
       - name: build
         run: gradle build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: upload
         uses: actions/upload-artifact@v2
