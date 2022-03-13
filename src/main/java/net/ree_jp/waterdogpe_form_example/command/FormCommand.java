@@ -18,7 +18,8 @@ public class FormCommand extends Command {
 
     @Override
     public boolean onExecute(CommandSender sender, String alias, String[] args) {
-        if (sender instanceof ProxiedPlayer player) {
+        if (sender instanceof ProxiedPlayer) {
+            ProxiedPlayer player = (ProxiedPlayer) sender;
             SimpleForm form = new SimpleForm("Form Example", "This is a form example.", () -> player.sendMessage("click close"));
 
             form.addElement(new Button("This is Button", () -> player.sendMessage("click button")));
